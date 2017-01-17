@@ -27,7 +27,7 @@ public class Instituicao implements Serializable {
 
     @NotNull
     @Size(min = 14, max = 20)
-    @Pattern(regexp = "^[0-9]{2}\\.([0-9]{3}){2}/[0-9]{4}-[0-9]{2}$")
+    @Pattern(regexp = "^[0-9]{14}$")
     @Column(name = "cnpj", length = 20, nullable = false)
     private String cnpj;
 

@@ -6,7 +6,9 @@ import org.hibernate.annotations.CacheConcurrencyStrategy;
 import javax.persistence.*;
 import javax.validation.constraints.*;
 import java.io.Serializable;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 /**
  * A Telefone.
@@ -33,6 +35,11 @@ public class Telefone implements Serializable {
     @Pattern(regexp = "^[+0-9]*$")
     @Column(name = "numero", length = 20, nullable = false)
     private String numero;
+
+    @ManyToMany(mappedBy = "telefones")
+    private Set<Endereco> enderecos = new HashSet<>();
+    @ManyToMany(mappedBy = "telefones")
+    private Set<Instituicao> instituicoes = new HashSet<>();
 
     public Long getId() {
         return id;
@@ -66,6 +73,24 @@ public class Telefone implements Serializable {
 
     public void setNumero(String numero) {
         this.numero = numero;
+    }
+
+    public Set<Endereco> getEnderecos(){
+        return enderecos;
+    }
+
+    public Telefone setEnderecos(Set<Endereco> enderecos){
+        this.enderecos = enderecos;
+        return this;
+    }
+
+    public Set<Instituicao> getInstituicoes() {
+        return instituicoes;
+    }
+
+    public Telefone setInstituicoes(Set<Instituicao> instituicoes) {
+        this.instituicoes = instituicoes;
+        return this;
     }
 
     @Override

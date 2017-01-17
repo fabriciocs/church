@@ -24,7 +24,7 @@ public class Cidade implements Serializable {
 
     @NotNull
     @Size(min = 4, max = 255)
-    @Pattern(regexp = "^[A-zÀ-ÿ]*$")
+    @Pattern(regexp = "^[A-zÀ-ÿ\\s]*$")
     @Column(name = "descricao", length = 255, nullable = false)
     private String descricao;
 

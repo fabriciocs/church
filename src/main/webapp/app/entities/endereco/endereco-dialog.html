@@ -101,7 +101,7 @@
             <label class="control-label" data-translate="churchApp.endereco.cep" for="field_cep">Cep</label>
             <input type="text" class="form-control" name="cep" id="field_cep"
                     ng-model="vm.endereco.cep"
-                    required ng-minlength="8" ng-maxlength="8" ng-pattern="/^[0-9]{2}\.[0-9]{3}-[0-9]{3}$/" />
+                    required ng-minlength="8" ng-maxlength="10" ui-br-cep-mask="" />
             <div ng-show="editForm.cep.$invalid">
                 <p class="help-block"
                     ng-show="editForm.cep.$error.required" data-translate="entity.validation.required">

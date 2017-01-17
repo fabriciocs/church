@@ -2,26 +2,26 @@
     "churchApp": {
         "instituicao" : {
             "home": {
-                "title": "Instituicaos",
-                "createLabel": "Criar novo Instituicao",
-                "createOrEditLabel": "Criar ou editar Instituicao",
-                "search": "Pesquisar por Instituicao"
+                "title": "Instituições",
+                "createLabel": "Criar nova Instituição",
+                "createOrEditLabel": "Criar ou editar Instituição",
+                "search": "Pesquisar por Instituição"
             },
-            "created": "Um novo Instituicao é criado com o identificador {{ param }}",
-            "updated": "Um Instituicao é atualizado com o identificador {{ param }}",
-            "deleted": "Um Instituicao é deletado com o identificador {{ param }}",
+            "created": "Uma nova Instituição foi criada com o identificador {{ param }}",
+            "updated": "Uma nova Instituição foi atualizada com o identificador {{ param }}",
+            "deleted": "Uma nova Instituição foi deletada com o identificador {{ param }}",
             "delete": {
-                "question": "Tem certeza de que deseja excluir Instituicao {{ id }}?"
+                "question": "Tem certeza de que deseja excluir Instituição {{ id }}?"
             },
             "detail": {
-                "title": "Instituicao"
+                "title": "Instituição"
             },
-            "cnpj": "Cnpj",
-            "inscricaoEstadual": "Inscricao Estadual",
+            "cnpj": "CNPJ",
+            "inscricaoEstadual": "Inscrição Estadual",
             "nomeEmpresarial": "Nome Empresarial",
-            "dataCadastro": "Data Cadastro",
-            "observacao": "Observacao",
-            "enderecos": "Enderecos",
+            "dataCadastro": "Data de Cadastro",
+            "observacao": "Observação",
+            "enderecos": "Endereços",
             "telefones": "Telefones"
         }
     }

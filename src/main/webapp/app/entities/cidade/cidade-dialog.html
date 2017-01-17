@@ -17,7 +17,7 @@
             <label class="control-label" data-translate="churchApp.cidade.descricao" for="field_descricao">Descricao</label>
             <input type="text" class="form-control" name="descricao" id="field_descricao"
                     ng-model="vm.cidade.descricao"
-                    required ng-minlength="4" ng-maxlength="255" ng-pattern="/^[A-zÀ-ÿ]*$/" />
+                    required ng-minlength="4" ng-maxlength="255" ng-pattern="/^[A-zÀ-ÿ\s]*$/" />
             <div ng-show="editForm.descricao.$invalid">
                 <p class="help-block"
                     ng-show="editForm.descricao.$error.required" data-translate="entity.validation.required">

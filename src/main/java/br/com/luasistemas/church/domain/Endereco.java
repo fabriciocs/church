@@ -49,7 +49,6 @@ public class Endereco implements Serializable {
 
     @NotNull
     @Size(min = 8, max = 8)
-    @Pattern(regexp = "^[0-9]{2}\\.[0-9]{3}-[0-9]{3}$")
     @Column(name = "cep", length = 8, nullable = false)
     private String cep;
 
@@ -63,6 +62,9 @@ public class Endereco implements Serializable {
                joinColumns = @JoinColumn(name="enderecos_id", referencedColumnName="ID"),
                inverseJoinColumns = @JoinColumn(name="telefones_id", referencedColumnName="ID"))
     private Set<Telefone> telefones = new HashSet<>();
+
+    @ManyToMany(mappedBy = "enderecos")
+    private Set<Instituicao> instituicoes = new HashSet<>();
 
     public Long getId() {
         return id;
@@ -186,6 +188,14 @@ public class Endereco implements Serializable {
 
     public void setTelefones(Set<Telefone> telefones) {
         this.telefones = telefones;
+    }
+
+    public Set<Instituicao> getInstituicoes() {
+        return instituicoes;
+    }
+
+    public void setInstituicoes(Set<Instituicao> instituicoes) {
+        this.instituicoes = instituicoes;
     }
 
     @Override
