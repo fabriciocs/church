@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <include file="classpath:config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170117021559_added_entity_Estado.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170117021851_added_entity_Cidade.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170117022140_added_entity_Telefone.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170117022806_added_entity_Endereco.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170117023629_added_entity_Instituicao.xml" relativeToChangelogFile="false"/>
+    <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="classpath:config/liquibase/changelog/20170117021851_added_entity_constraints_Cidade.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170117022806_added_entity_constraints_Endereco.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170117023629_added_entity_constraints_Instituicao.xml" relativeToChangelogFile="false"/>
+    <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
+</databaseChangeLog>

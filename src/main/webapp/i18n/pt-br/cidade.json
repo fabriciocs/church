@@ -1,0 +1,24 @@
+{
+    "churchApp": {
+        "cidade" : {
+            "home": {
+                "title": "Cidades",
+                "createLabel": "Criar novo Cidade",
+                "createOrEditLabel": "Criar ou editar Cidade",
+                "search": "Pesquisar por Cidade"
+            },
+            "created": "Um novo Cidade é criado com o identificador {{ param }}",
+            "updated": "Um Cidade é atualizado com o identificador {{ param }}",
+            "deleted": "Um Cidade é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Cidade {{ id }}?"
+            },
+            "detail": {
+                "title": "Cidade"
+            },
+            "descricao": "Descricao",
+            "codigoIbge": "Codigo Ibge",
+            "estado": "Estado"
+        }
+    }
+}

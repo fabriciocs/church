@@ -1,0 +1,29 @@
+{
+    "churchApp": {
+        "endereco" : {
+            "home": {
+                "title": "Enderecos",
+                "createLabel": "Criar novo Endereco",
+                "createOrEditLabel": "Criar ou editar Endereco",
+                "search": "Pesquisar por Endereco"
+            },
+            "created": "Um novo Endereco é criado com o identificador {{ param }}",
+            "updated": "Um Endereco é atualizado com o identificador {{ param }}",
+            "deleted": "Um Endereco é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Endereco {{ id }}?"
+            },
+            "detail": {
+                "title": "Endereco"
+            },
+            "descricao": "Descricao",
+            "logradouro": "Logradouro",
+            "numero": "Numero",
+            "complemento": "Complemento",
+            "bairro": "Bairro",
+            "cep": "Cep",
+            "cidade": "Cidade",
+            "telefones": "Telefones"
+        }
+    }
+}

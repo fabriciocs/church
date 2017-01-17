@@ -1,0 +1,51 @@
+
+<div>
+    <h2><span data-translate="churchApp.instituicao.detail.title">Instituicao</span> {{vm.instituicao.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="churchApp.instituicao.cnpj">Cnpj</span></dt>
+        <dd>
+            <span>{{vm.instituicao.cnpj}}</span>
+        </dd>
+        <dt><span data-translate="churchApp.instituicao.inscricaoEstadual">Inscricao Estadual</span></dt>
+        <dd>
+            <span>{{vm.instituicao.inscricaoEstadual}}</span>
+        </dd>
+        <dt><span data-translate="churchApp.instituicao.nomeEmpresarial">Nome Empresarial</span></dt>
+        <dd>
+            <span>{{vm.instituicao.nomeEmpresarial}}</span>
+        </dd>
+        <dt><span data-translate="churchApp.instituicao.dataCadastro">Data Cadastro</span></dt>
+        <dd>
+            <span>{{vm.instituicao.dataCadastro | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span data-translate="churchApp.instituicao.observacao">Observacao</span></dt>
+        <dd>
+            <span>{{vm.instituicao.observacao}}</span>
+        </dd>
+        <dt><span data-translate="churchApp.instituicao.enderecos">Enderecos</span></dt>
+        <dd>
+            <span ng-repeat="enderecos in vm.instituicao.enderecos">
+                <a ui-sref="endereco-detail({id: enderecos.id})">{{enderecos.descricao}}</a>{{$last ? '' : ', '}}
+            </span>
+        </dd>
+        <dt><span data-translate="churchApp.instituicao.telefones">Telefones</span></dt>
+        <dd>
+            <span ng-repeat="telefones in vm.instituicao.telefones">
+                <a ui-sref="telefone-detail({id: telefones.id})">{{telefones.descricao}}</a>{{$last ? '' : ', '}}
+            </span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="instituicao-detail.edit({id:vm.instituicao.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

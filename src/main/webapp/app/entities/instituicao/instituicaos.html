@@ -1,0 +1,68 @@
+<div>
+    <h2 data-translate="churchApp.instituicao.home.title">Instituicaos</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="instituicao.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="churchApp.instituicao.home.createLabel">
+                        Create new Instituicao
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
+                    <th jh-sort-by="id"><span data-translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="cnpj"><span data-translate="churchApp.instituicao.cnpj">Cnpj</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="inscricaoEstadual"><span data-translate="churchApp.instituicao.inscricaoEstadual">Inscricao Estadual</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="nomeEmpresarial"><span data-translate="churchApp.instituicao.nomeEmpresarial">Nome Empresarial</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="dataCadastro"><span data-translate="churchApp.instituicao.dataCadastro">Data Cadastro</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="observacao"><span data-translate="churchApp.instituicao.observacao">Observacao</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="instituicao in vm.instituicaos track by instituicao.id">
+                    <td><a ui-sref="instituicao-detail({id:instituicao.id})">{{instituicao.id}}</a></td>
+                    <td>{{instituicao.cnpj}}</td>
+                    <td>{{instituicao.inscricaoEstadual}}</td>
+                    <td>{{instituicao.nomeEmpresarial}}</td>
+                        <td>{{instituicao.dataCadastro | date:'mediumDate'}}</td>
+                    <td>{{instituicao.observacao}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="instituicao-detail({id:instituicao.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="instituicao.edit({id:instituicao.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="instituicao.delete({id:instituicao.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="text-center">
+        <jhi-item-count page="vm.page" total="vm.queryCount" items-per-page="vm.itemsPerPage"></jhi-item-count>
+    </div>
+    <uib-pager total-items="vm.totalItems" ng-model="vm.page" ng-change="vm.transition()"></uib-pager>
+</div>

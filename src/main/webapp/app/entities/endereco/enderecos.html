@@ -1,0 +1,74 @@
+<div>
+    <h2 data-translate="churchApp.endereco.home.title">Enderecos</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="endereco.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="churchApp.endereco.home.createLabel">
+                        Create new Endereco
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
+                    <th jh-sort-by="id"><span data-translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="descricao"><span data-translate="churchApp.endereco.descricao">Descricao</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="logradouro"><span data-translate="churchApp.endereco.logradouro">Logradouro</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="numero"><span data-translate="churchApp.endereco.numero">Numero</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="complemento"><span data-translate="churchApp.endereco.complemento">Complemento</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="bairro"><span data-translate="churchApp.endereco.bairro">Bairro</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="cep"><span data-translate="churchApp.endereco.cep">Cep</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="cidade.descricao"><span data-translate="churchApp.endereco.cidade">Cidade</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="endereco in vm.enderecos track by endereco.id">
+                    <td><a ui-sref="endereco-detail({id:endereco.id})">{{endereco.id}}</a></td>
+                    <td>{{endereco.descricao}}</td>
+                    <td>{{endereco.logradouro}}</td>
+                    <td>{{endereco.numero}}</td>
+                    <td>{{endereco.complemento}}</td>
+                    <td>{{endereco.bairro}}</td>
+                    <td>{{endereco.cep}}</td>
+                    <td>
+                        <a ui-sref="cidade-detail({id:endereco.cidade.id})">{{endereco.cidade.descricao}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="endereco-detail({id:endereco.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="endereco.edit({id:endereco.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="endereco.delete({id:endereco.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="text-center">
+        <jhi-item-count page="vm.page" total="vm.queryCount" items-per-page="vm.itemsPerPage"></jhi-item-count>
+    </div>
+    <uib-pager total-items="vm.totalItems" ng-model="vm.page" ng-change="vm.transition()"></uib-pager>
+</div>
